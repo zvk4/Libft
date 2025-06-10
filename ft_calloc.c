@@ -14,16 +14,13 @@
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
-    size_t a;
-    
-    a = 0;   
-    while (nmemb--)
-    {
-        
-    }
-    a = ((size_t *)malloc(sizeof(size_t) * (nmemb)));
-    if (!a)
-        return (0);
+    void	*ptr;
+
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
 
 // tamamlanmadı, If nmemb or size is 0, then calloc() returns a unique
